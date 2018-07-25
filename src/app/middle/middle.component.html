@@ -1,0 +1,47 @@
+
+<div class="container middle" [hidden]="!hide" style="height:200px;">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <p style="margin-top:10px;color:#000;font-size:26px;">Ask Me Anything</p>
+            <p>Ask your questions to founders, influencers and experts in our "Ask me Anything" sessions</p>
+            <button style="background-color:#ec6733;color:#ffffff;font-size:20px;"><b>Learn more about AMA</b></button>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6" >
+          <img src="assets/img/engage_landing_banner.png" class="mobile" width="115%">
+      </div>
+    </div>
+    
+  </div>
+<div [hidden]="!hide" >
+    <p style="margin-top:10px;color:#000;font-size:22px;">Upcoming AMA's</p>
+    <div style="background-color:#3e87c2;padding:40px;">
+        Request a Speaker for AMA
+        <div style="float:right;">
+            <input type="text" placeholder="@twitterhandle" style="border-radius:25px;">
+            <button style="background-color:#ec6733;color:#ffffff;border-radius:25px;">Request Now</button>
+        </div>
+       
+    </div>
+
+    <p style="margin-top:10px;color:#000;font-size:22px;">Past AMA's</p>
+       
+    <ul *ngFor ="let hero of heroes" style="background-color:#fff;" >
+        <div class="row" (click)="loadMyChildComponent()">
+       <div class="col-lg-2 col-md-2 col-sm-2">
+            <img class="img-circle" src="{{hero.url}}">
+       </div>
+        <div class="col-lg-10 col-md-10 col-sm-10">
+            <p style="font-size:20px;"><b>{{ hero.name }}</b></p>
+            <p> {{ hero.desc}}</p>
+             <p>{{hero.fromdate}}-{{hero.todate}}</p> 
+            <p>{{hero.specialization}}</p>
+        </div>
+    </div>
+  </ul>
+</div>
+
+
+<!-- <button (click)="loadMyChildComponent()">Load</button> -->
+<div [hidden]="hide">
+   <profile></profile>
+</div>
